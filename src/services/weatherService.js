@@ -28,8 +28,8 @@ function getWeatherData(response) {
         weatherEntries.main.temp,
         weatherEntries.main.temp_max,
         weatherEntries.main.temp_min,
-        new Date(Number(weatherEntries.sys.sunrise)),
-        new Date(Number(weatherEntries.sys.sunset))
+        new Date(weatherEntries.sys.sunrise*1000),
+        new Date(weatherEntries.sys.sunset*1000)
     )
 }
 
