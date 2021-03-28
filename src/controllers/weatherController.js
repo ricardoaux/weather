@@ -3,14 +3,19 @@ const {getWeatherDataByCity, getCapitals, getEuropeanCountries} = require("../se
 
 
 const weatherByCity = async(req, res) => {
-    logger.debug("Get weather to:", req.query.city)
+    if (!req.query.city) {
+        logger.error('City (or cities) is missing')
+        res.status(400).send('City (or cities) is missing');
+    } else {
+        logger.debug("Get weather to:", req.query.city)
 
-    try {
-        res.json(await getWeatherDataByCity(req.query.city.split(',')))
+        try {
+            res.json(await getWeatherDataByCity(req.query.city.split(',')))
 
-    } catch (e) {
-        logger.error("Unchecked error while getting weather", e)
-        res.status(500).send()
+        } catch (e) {
+            logger.error("Unchecked error while getting weather", e)
+            res.status(500).send()
+        }
     }
 }
 

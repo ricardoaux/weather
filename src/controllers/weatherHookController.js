@@ -14,13 +14,13 @@ const alertHook = async(req, res) => {
     if (error) {
         logger.error(error.message)
         res.status(400).send(error.message)
-    }
-
-    try {
-        addWebhook(new Hook(req.body.url, req.body.city, req.body.threshold)).then(res.send())
-    } catch (e) {
-        logger.error("Unchecked error while posting new webhook", e)
-        res.status(500).send()
+    } else {
+        try {
+            addWebhook(new Hook(req.body.url, req.body.city, req.body.threshold)).then(res.send())
+        } catch (e) {
+            logger.error("Unchecked error while posting new webhook", e)
+            res.status(500).send()
+        }
     }
 }
 
