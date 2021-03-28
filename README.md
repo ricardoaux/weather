@@ -1,5 +1,7 @@
 # Weather API
 
+It is my first node.js application!
+
 ## Run
 
 ```sh
@@ -44,16 +46,16 @@ log_level: DEBUG
     "temperatureActual": 22.88,
     "temperatureMax": 23.33,
     "temperatureMin": 22.22,
-    "sunrise": "1970-01-19T17:08:32.837Z",
-    "sunset": "1970-01-19T17:09:17.735Z"
+    "sunrise": "2021-03-28T06:27:17.000Z",
+    "sunset": "2021-03-28T18:55:35.000Z"
   },
   {
     "city": "Coimbra",
     "temperatureActual": 24.23,
     "temperatureMax": 24.44,
     "temperatureMin": 23.89,
-    "sunrise": "1970-01-19T17:08:32.628Z",
-    "sunset": "1970-01-19T17:09:17.602Z"
+    "sunrise": "2021-03-28T06:23:48.000Z",
+    "sunset": "2021-03-28T18:53:22.000Z"
   }
 ]
 ```
