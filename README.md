@@ -41,17 +41,17 @@ log_level: DEBUG
 [
   {
     "city": "Lisbon",
-    "temperatureActual": 22.87,
-    "temperatureMax": 23.89,
-    "temperatureMin": 22,
+    "temperatureActual": 22.88,
+    "temperatureMax": 23.33,
+    "temperatureMin": 22.22,
     "sunrise": "1970-01-19T17:08:32.837Z",
     "sunset": "1970-01-19T17:09:17.735Z"
   },
   {
     "city": "Coimbra",
-    "temperatureActual": 24.44,
+    "temperatureActual": 24.23,
     "temperatureMax": 24.44,
-    "temperatureMin": 24.44,
+    "temperatureMin": 23.89,
     "sunrise": "1970-01-19T17:08:32.628Z",
     "sunset": "1970-01-19T17:09:17.602Z"
   }
