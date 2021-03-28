@@ -9,9 +9,11 @@ node index.js
 ## Defaults
 
 You can change default configs in /src/config/config.js
+```
 port: 3000
 log_filename: logfile.log
 log_level: DEBUG
+```
 
 
 ## Endpoints
@@ -32,3 +34,9 @@ log_level: DEBUG
 	"threshold": 10
 }
 ```
+
+## Improvements (not implemented)
+- Add unit tests
+- Use mongo (or similar) to register webhook data
+- Separate logs in multiple files
+- Exception handler
