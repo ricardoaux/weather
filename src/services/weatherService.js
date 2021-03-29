@@ -10,11 +10,10 @@ async function requestExternalWeatherData(city) {
     const apiKey = '8598a882c71c68aa0fbda863ed1d5776'
     const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
 
-    return new Promise(function (resolve) {
+    return new Promise(function (resolve, reject) {
         request(url, function (err, response, body) {
-            if (err) {
-                logger.error(err);
-                throw err
+            if (response.statusCode !== 200) {
+                reject('Error getting weather to city: ' + city)
             }
             resolve(body)
         })
@@ -35,16 +34,14 @@ function getWeatherData(response) {
 
 async function getWeatherDataByCity(cities) {
     let result = []
+
     for (let city of cities) {
-        try {
-            let response = await requestExternalWeatherData(city)
-            result.push(getWeatherData(response))
-        } catch (e) {
-            logger.error("Error getting weather to city: ", city)
-        }
+        await requestExternalWeatherData(city)
+            .then(function (r) { result.push(getWeatherData(r)) })
+            .catch(function (e) { logger.error(e) })
     }
 
-    return result
+    return Promise.all(result)
 }
 
 function getEuropeanCountries() {
